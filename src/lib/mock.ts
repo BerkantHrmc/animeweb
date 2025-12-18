@@ -180,8 +180,9 @@ export const ANIME: Anime[] = [
     studio: 'MAPPA',
     director: 'Kaori Makita',
     synopsis: 'Ölümsüzlük adasında, suçlular ve cellatlar hayatta kalma mücadelesi verir.',
-    heroImage: heroDataUri("Hell's Paradise", 'hells-paradise'),
-    posterImage: posterDataUri("Hell's Paradise", 'hells-paradise')
+    // Daha kontrastlı (kırmızı) palette için seed varyantı
+    heroImage: heroDataUri("Hell's Paradise", 'hells-paradise:scarlet'),
+    posterImage: posterDataUri("Hell's Paradise", 'hells-paradise:scarlet')
   },
   {
     slug: 'blue-lock',
