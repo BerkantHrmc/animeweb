@@ -2,13 +2,14 @@ import Link from 'next/link';
 import { AuthShell } from '@/components/AuthShell';
 import { Button, LinkButton } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { heroDataUri } from '@/lib/placeholders';
 
 export default function RegisterPage() {
   return (
     <AuthShell
       title="Dünyanın Kapılarını Arala"
       subtitle="Binlerce bölümü reklamsız izlemek için hesabınızı oluşturun."
-      backgroundImage="https://images.unsplash.com/photo-1520975732131-6fd1f5c7f7ad?auto=format&fit=crop&w=2400&q=60"
+      backgroundImage={heroDataUri('Dünyanın Kapılarını Arala', 'auth-register')}
     >
       <form className="grid gap-4">
         <div className="grid gap-2">

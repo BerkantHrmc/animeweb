@@ -1,3 +1,5 @@
+import { avatarDataUri, genreDataUri, heroDataUri, posterDataUri } from './placeholders';
+
 export type Anime = {
   slug: string;
   title: string;
@@ -22,66 +24,16 @@ export type CastMember = {
 };
 
 export const GENRES: { id: string; label: string; image: string }[] = [
-  {
-    id: 'aksiyon',
-    label: 'Aksiyon',
-    image:
-      'https://images.unsplash.com/photo-1520975958225-72f8f0b3e2c8?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'macera',
-    label: 'Macera',
-    image:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'fantastik',
-    label: 'Fantastik',
-    image:
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'komedi',
-    label: 'Komedi',
-    image:
-      'https://images.unsplash.com/photo-1520975910202-89f4f7b6b0e6?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'romantik',
-    label: 'Romantik',
-    image:
-      'https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'korku',
-    label: 'Korku',
-    image:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'gizem',
-    label: 'Gizem',
-    image:
-      'https://images.unsplash.com/photo-1520975868457-4b2d3cb6d2d2?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'spor',
-    label: 'Spor',
-    image:
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'mecha',
-    label: 'Mecha',
-    image:
-      'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=60'
-  },
-  {
-    id: 'bilim-kurgu',
-    label: 'Bilim Kurgu',
-    image:
-      'https://images.unsplash.com/photo-1520975687525-7d40c7f2b4a9?auto=format&fit=crop&w=1200&q=60'
-  }
+  { id: 'aksiyon', label: 'Aksiyon', image: genreDataUri('Aksiyon', 'aksiyon') },
+  { id: 'macera', label: 'Macera', image: genreDataUri('Macera', 'macera') },
+  { id: 'fantastik', label: 'Fantastik', image: genreDataUri('Fantastik', 'fantastik') },
+  { id: 'komedi', label: 'Komedi', image: genreDataUri('Komedi', 'komedi') },
+  { id: 'romantik', label: 'Romantik', image: genreDataUri('Romantik', 'romantik') },
+  { id: 'korku', label: 'Korku', image: genreDataUri('Korku', 'korku') },
+  { id: 'gizem', label: 'Gizem', image: genreDataUri('Gizem', 'gizem') },
+  { id: 'spor', label: 'Spor', image: genreDataUri('Spor', 'spor') },
+  { id: 'mecha', label: 'Mecha', image: genreDataUri('Mecha', 'mecha') },
+  { id: 'bilim-kurgu', label: 'Bilim Kurgu', image: genreDataUri('Bilim Kurgu', 'bilim-kurgu') }
 ];
 
 export const ANIME: Anime[] = [
@@ -99,10 +51,8 @@ export const ANIME: Anime[] = [
     director: 'Aya Kisaragi',
     synopsis:
       'Neon ışıklı bir metropolde, yalnız bir kılıç ustası şehrin ruhunu kontrol eden yozlaşmış bir sendikaya karşı savaşır.',
-    heroImage:
-      'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1520975687525-7d40c7f2b4a9?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Cyber Ronin', 'cyber-ronin'),
+    posterImage: posterDataUri('Cyber Ronin', 'cyber-ronin')
   },
   {
     slug: 'kimetsu-no-yaiba',
@@ -118,10 +68,8 @@ export const ANIME: Anime[] = [
     director: 'Haruo Sotozaki',
     synopsis:
       'Ailesi iblisler tarafından katledilen Tanjiro, hayatta kalan kız kardeşi Nezuko’yu kurtarmak ve insanlığa geri döndürmek için iblis avcılarına katılır.',
-    heroImage:
-      'https://images.unsplash.com/photo-1520975732131-6fd1f5c7f7ad?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Kimetsu no Yaiba', 'kimetsu-no-yaiba'),
+    posterImage: posterDataUri('Kimetsu no Yaiba', 'kimetsu-no-yaiba')
   },
   {
     slug: 'spy-x-family',
@@ -136,10 +84,8 @@ export const ANIME: Anime[] = [
     studio: 'Wit Studio',
     director: 'Kazuhiro Furuhashi',
     synopsis: 'Bir ajan, sahte bir aile kurarak imkânsız bir görevi tamamlamaya çalışır.',
-    heroImage:
-      'https://images.unsplash.com/photo-1520975904197-6b0b2db7a12f?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Spy x Family', 'spy-x-family'),
+    posterImage: posterDataUri('Spy x Family', 'spy-x-family')
   },
   {
     slug: 'chainsaw-man',
@@ -154,10 +100,8 @@ export const ANIME: Anime[] = [
     studio: 'MAPPA',
     director: 'Ryu Nakayama',
     synopsis: 'Borç batağındaki Denji, şeytani güçlerle anlaşma yapar ve avcı olur.',
-    heroImage:
-      'https://images.unsplash.com/photo-1520975932479-6a8f0f72c5c6?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Chainsaw Man', 'chainsaw-man'),
+    posterImage: posterDataUri('Chainsaw Man', 'chainsaw-man')
   },
   {
     slug: 'jujutsu-kaisen',
@@ -172,10 +116,8 @@ export const ANIME: Anime[] = [
     studio: 'MAPPA',
     director: 'Sunghoo Park',
     synopsis: 'Yuji, lanetli bir objeyi yutar ve lanetlerle savaşan bir okula katılır.',
-    heroImage:
-      'https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Jujutsu Kaisen', 'jujutsu-kaisen'),
+    posterImage: posterDataUri('Jujutsu Kaisen', 'jujutsu-kaisen')
   },
   {
     slug: 'my-hero-academia',
@@ -190,10 +132,8 @@ export const ANIME: Anime[] = [
     studio: 'Bones',
     director: 'Kenji Nagasaki',
     synopsis: 'Süper güçlerin norm olduğu dünyada, güçsüz bir çocuk kahraman olmanın yolunu bulur.',
-    heroImage:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('My Hero Academia', 'my-hero-academia'),
+    posterImage: posterDataUri('My Hero Academia', 'my-hero-academia')
   },
   {
     slug: 'vinland-saga',
@@ -208,10 +148,8 @@ export const ANIME: Anime[] = [
     studio: 'Wit Studio',
     director: 'Shuhei Yabuta',
     synopsis: 'Genç bir savaşçı intikam ve anlam arayışında kuzey denizlerine açılır.',
-    heroImage:
-      'https://images.unsplash.com/photo-1520975958225-72f8f0b3e2c8?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1520975958225-72f8f0b3e2c8?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Vinland Saga', 'vinland-saga'),
+    posterImage: posterDataUri('Vinland Saga', 'vinland-saga')
   },
   {
     slug: 'tokyo-revengers',
@@ -226,10 +164,8 @@ export const ANIME: Anime[] = [
     studio: 'Liden Films',
     director: 'Koichi Hatsumi',
     synopsis: 'Takemichi, geçmişe gidip kaderi değiştirmeye çalışır.',
-    heroImage:
-      'https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Tokyo Revengers', 'tokyo-revengers'),
+    posterImage: posterDataUri('Tokyo Revengers', 'tokyo-revengers')
   },
   {
     slug: 'hells-paradise',
@@ -244,10 +180,8 @@ export const ANIME: Anime[] = [
     studio: 'MAPPA',
     director: 'Kaori Makita',
     synopsis: 'Ölümsüzlük adasında, suçlular ve cellatlar hayatta kalma mücadelesi verir.',
-    heroImage:
-      'https://images.unsplash.com/photo-1520975868457-4b2d3cb6d2d2?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1520975868457-4b2d3cb6d2d2?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri("Hell's Paradise", 'hells-paradise'),
+    posterImage: posterDataUri("Hell's Paradise", 'hells-paradise')
   },
   {
     slug: 'blue-lock',
@@ -262,10 +196,8 @@ export const ANIME: Anime[] = [
     studio: '8bit',
     director: 'Tetsuaki Watanabe',
     synopsis: 'Japonya’nın en iyi forvetini yaratmak için acımasız bir proje başlar.',
-    heroImage:
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=2000&q=60',
-    posterImage:
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=60'
+    heroImage: heroDataUri('Blue Lock', 'blue-lock'),
+    posterImage: posterDataUri('Blue Lock', 'blue-lock')
   }
 ];
 
@@ -273,38 +205,32 @@ export const CAST: CastMember[] = [
   {
     name: 'Natsuki Hanae',
     role: 'Tanjiro Kamado',
-    avatar:
-      'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=60'
+    avatar: avatarDataUri('Natsuki Hanae')
   },
   {
     name: 'Akari Kito',
     role: 'Nezuko Kamado',
-    avatar:
-      'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=60'
+    avatar: avatarDataUri('Akari Kito')
   },
   {
     name: 'Hiro Shimono',
     role: 'Zenitsu Agatsuma',
-    avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=60'
+    avatar: avatarDataUri('Hiro Shimono')
   },
   {
     name: 'Yoshitsugu Matsuoka',
     role: 'Inosuke Hashibira',
-    avatar:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=60'
+    avatar: avatarDataUri('Yoshitsugu Matsuoka')
   },
   {
     name: 'Takahiro Sakurai',
     role: 'Giyu Tomioka',
-    avatar:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=60'
+    avatar: avatarDataUri('Takahiro Sakurai')
   },
   {
     name: 'Houchoo Otsuka',
     role: 'Sakonji Urokodaki',
-    avatar:
-      'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=200&q=60'
+    avatar: avatarDataUri('Houchoo Otsuka')
   }
 ];
 

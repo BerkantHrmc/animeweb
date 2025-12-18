@@ -17,6 +17,7 @@ export function AnimeCard({ anime, compact }: { anime: Anime; compact?: boolean 
           src={anime.posterImage}
           alt={anime.title}
           fill
+          unoptimized={anime.posterImage.startsWith('data:')}
           className="object-cover"
           sizes="(max-width: 768px) 160px, 190px"
         />

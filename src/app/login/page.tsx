@@ -2,13 +2,14 @@ import Link from 'next/link';
 import { AuthShell } from '@/components/AuthShell';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { heroDataUri } from '@/lib/placeholders';
 
 export default function LoginPage() {
   return (
     <AuthShell
       title="Tekrar Hoşgeldin, Otaku"
       subtitle="Macerana kaldığın yerden devam et."
-      backgroundImage="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=2400&q=60"
+      backgroundImage={heroDataUri('Tekrar Hoşgeldin, Otaku', 'auth-login')}
     >
       <form className="grid gap-4">
         <div className="grid gap-2">

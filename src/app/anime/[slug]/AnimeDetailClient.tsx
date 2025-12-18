@@ -93,6 +93,7 @@ export function AnimeDetailClient({
                       src={anime.heroImage}
                       alt={`${anime.title} bölüm ${ep.no}`}
                       fill
+                      unoptimized={anime.heroImage.startsWith('data:')}
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
@@ -189,7 +190,14 @@ export function AnimeDetailClient({
                     className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3"
                   >
                     <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-white/10">
-                      <Image src={m.avatar} alt={m.name} fill className="object-cover" sizes="48px" />
+                      <Image
+                        src={m.avatar}
+                        alt={m.name}
+                        fill
+                        unoptimized={m.avatar.startsWith('data:')}
+                        className="object-cover"
+                        sizes="48px"
+                      />
                     </div>
                     <div>
                       <div className="text-sm font-extrabold text-white">{m.name}</div>

@@ -18,7 +18,14 @@ export function Top10Row({ items }: { items: Anime[] }) {
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
               <div className="absolute right-0 top-0 h-full w-[120px]">
-                <Image src={anime.posterImage} alt={anime.title} fill className="object-cover" sizes="120px" />
+                <Image
+                  src={anime.posterImage}
+                  alt={anime.title}
+                  fill
+                  unoptimized={anime.posterImage.startsWith('data:')}
+                  className="object-cover"
+                  sizes="120px"
+                />
               </div>
               <div className="relative z-10 p-4">
                 <div className="inline-flex items-center gap-2">
