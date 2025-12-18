@@ -115,7 +115,7 @@ export default function DashboardPage() {
           <Top10Row items={top10} />
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-10" id="topluluk">
+        <section className="mx-auto max-w-6xl px-4 py-10">
           <SectionHeader title="Popüler Animeler" />
           <HorizontalRow>
             {popular.map((a) => (

@@ -25,7 +25,7 @@ export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
       { href: '/dashboard', label: 'Anasayfa' },
       { href: '/dashboard#kesfet', label: 'Keşfet' },
       { href: '/dashboard#manga', label: 'Manga' },
-      { href: '/dashboard#topluluk', label: 'Topluluk' }
+      { href: '/listem', label: 'Listem' }
     ];
   }, [variant]);
 
