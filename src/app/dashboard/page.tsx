@@ -92,6 +92,24 @@ export default function DashboardPage() {
           </HorizontalRow>
         </section>
 
+        <section className="mx-auto max-w-6xl px-4 py-6" id="filmler">
+          <SectionHeader title="Filmler" />
+          <HorizontalRow>
+            {pick(ANIME, 7).map((a) => (
+              <AnimeCard key={a.slug} anime={a} />
+            ))}
+          </HorizontalRow>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 py-6" id="diziler">
+          <SectionHeader title="Diziler" />
+          <HorizontalRow>
+            {pick(ANIME, 7).map((a) => (
+              <AnimeCard key={a.slug} anime={a} />
+            ))}
+          </HorizontalRow>
+        </section>
+
         <section className="mx-auto max-w-6xl px-4 py-6">
           <SectionHeader title="Bugün En İyi 10 Anime" />
           <Top10Row items={top10} />

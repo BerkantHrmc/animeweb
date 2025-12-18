@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { AuthShell } from '@/components/AuthShell';
-import { Button } from '@/components/ui/Button';
+import { LinkButton } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { heroDataUri } from '@/lib/placeholders';
 
@@ -27,7 +27,9 @@ export default function LoginPage() {
           <Input placeholder="Şifrenizi girin" type="password" autoComplete="current-password" />
         </div>
 
-        <Button className="mt-3 h-12">Giriş Yap</Button>
+        <LinkButton href="/dashboard" className="mt-3 h-12 w-full justify-center">
+          Giriş Yap
+        </LinkButton>
 
         <div className="mt-2 text-center text-sm text-white/65">
           Henüz bir hesabın yok mu?{' '}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { AuthShell } from '@/components/AuthShell';
-import { Button, LinkButton } from '@/components/ui/Button';
+import { LinkButton } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { heroDataUri } from '@/lib/placeholders';
 
@@ -42,7 +42,9 @@ export default function RegisterPage() {
           </span>
         </label>
 
-        <Button className="mt-2 h-12">Şimdi izlemeye Başla</Button>
+        <LinkButton href="/onboarding" className="mt-2 h-12 w-full justify-center">
+          Şimdi izlemeye Başla
+        </LinkButton>
 
         <div className="text-center text-sm text-white/65">
           Zaten bir hesabınız var mı?{' '}
