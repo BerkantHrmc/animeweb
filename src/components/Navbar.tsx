@@ -44,30 +44,37 @@ export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
 
         <div className="flex items-center gap-2">
           {variant === 'app' ? (
-            <div className="hidden items-center gap-2 md:flex">
-              <div className="relative">
-                <input
-                  placeholder="Başlık, tür ara..."
-                  className="h-10 w-64 rounded-xl border border-white/10 bg-white/5 pl-10 pr-3 text-sm text-white/85 placeholder:text-white/35"
-                />
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-white/55">
-                  <IconSearch className="h-4 w-4" />
+            <>
+              <div className="hidden items-center gap-2 md:flex">
+                <div className="relative">
+                  <input
+                    placeholder="Başlık, tür ara..."
+                    className="h-10 w-64 rounded-xl border border-white/10 bg-white/5 pl-10 pr-3 text-sm text-white/85 placeholder:text-white/35"
+                  />
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-white/55">
+                    <IconSearch className="h-4 w-4" />
+                  </div>
                 </div>
               </div>
-              <Link
-                href="/login"
-                className="rounded-xl px-3 py-2 text-sm font-semibold text-white/80 hover:bg-white/10"
-              >
-                Giriş Yap
-              </Link>
-              <Link
-                href="/register"
-                className="rounded-xl bg-accent px-3 py-2 text-sm font-bold text-black"
-              >
-                Kayıt Ol
-              </Link>
-              <div className="h-9 w-9 rounded-full bg-white/10 ring-1 ring-white/10" />
-            </div>
+
+              {/* Auth actions always visible (mobile + desktop) */}
+              <div className="hidden items-center gap-2 sm:flex">
+                <Link
+                  href="/login"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white/80 hover:bg-white/10"
+                >
+                  Giriş Yap
+                </Link>
+                <Link
+                  href="/register"
+                  className="rounded-xl bg-accent px-3 py-2 text-sm font-bold text-black"
+                >
+                  Kayıt Ol
+                </Link>
+              </div>
+
+              <div className="hidden h-9 w-9 rounded-full bg-white/10 ring-1 ring-white/10 md:block" />
+            </>
           ) : (
             <div className="hidden items-center gap-2 md:flex">
               <Link href="/login" className="rounded-xl px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/10">
@@ -78,6 +85,16 @@ export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
               </Link>
             </div>
           )}
+
+          {/* Mobile quick CTA when variant=app */}
+          {variant === 'app' ? (
+            <Link
+              href="/register"
+              className="sm:hidden rounded-xl bg-accent px-3 py-2 text-sm font-bold text-black"
+            >
+              Kayıt Ol
+            </Link>
+          ) : null}
 
           <button
             type="button"
