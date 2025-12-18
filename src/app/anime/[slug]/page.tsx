@@ -22,7 +22,7 @@ export default async function AnimeDetailPage({ params }: { params: Promise<{ sl
         <section className="relative">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${anime.heroImage})` }}
+            style={{ backgroundImage: `url("${anime.heroImage}")` }}
             aria-hidden
           />
           <div className="absolute inset-0 bg-hero-overlay" aria-hidden />

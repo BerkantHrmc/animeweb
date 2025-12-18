@@ -23,7 +23,7 @@ export default function DashboardPage() {
         <section className="relative">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${hero.heroImage})` }}
+            style={{ backgroundImage: `url("${hero.heroImage}")` }}
             aria-hidden
           />
           <div className="absolute inset-0 bg-hero-overlay" aria-hidden />

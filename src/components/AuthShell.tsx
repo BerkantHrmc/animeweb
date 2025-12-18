@@ -18,7 +18,7 @@ export function AuthShell({
       <main className="relative min-h-[calc(100vh-64px)]">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{ backgroundImage: `url("${backgroundImage}")` }}
           aria-hidden
         />
         <div className="absolute inset-0 bg-hero-overlay" aria-hidden />
