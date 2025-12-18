@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import { Logo } from './Logo';
 import { IconMenu, IconSearch } from './Icons';
+import { avatarDataUri } from '@/lib/placeholders';
 
 export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
   const [open, setOpen] = useState(false);
@@ -12,8 +14,9 @@ export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
     if (variant === 'app') {
       return [
         { href: '/dashboard', label: 'Ana Sayfa' },
-        { href: '/dashboard#diziler', label: 'Diziler' },
-        { href: '/dashboard#filmler', label: 'Filmler' },
+        { href: '/dashboard#kesfet', label: 'Keşfet' },
+        { href: '/dashboard#manga', label: 'Manga' },
+        { href: '/dashboard#topluluk', label: 'Topluluk' },
         { href: '/listem', label: 'Listem' }
       ];
     }
@@ -73,7 +76,19 @@ export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
                 </Link>
               </div>
 
-              <div className="hidden h-9 w-9 rounded-full bg-white/10 ring-1 ring-white/10 md:block" />
+              {/* Avatar (demo) */}
+              <div className="hidden md:block">
+                <div className="relative h-9 w-9 overflow-hidden rounded-full ring-1 ring-white/10 bg-white/5">
+                  <Image
+                    src={avatarDataUri('Otaku')}
+                    alt="Profil"
+                    fill
+                    unoptimized
+                    className="object-cover"
+                    sizes="36px"
+                  />
+                </div>
+              </div>
             </>
           ) : (
             <div className="hidden items-center gap-2 md:flex">
@@ -88,12 +103,20 @@ export function Navbar({ variant = 'app' }: { variant?: 'app' | 'auth' }) {
 
           {/* Mobile quick CTA when variant=app */}
           {variant === 'app' ? (
-            <Link
-              href="/register"
-              className="sm:hidden rounded-xl bg-accent px-3 py-2 text-sm font-bold text-black"
-            >
-              Kayıt Ol
-            </Link>
+            <>
+              <Link
+                href="/login"
+                className="sm:hidden rounded-xl px-3 py-2 text-sm font-semibold text-white/80 hover:bg-white/10"
+              >
+                Giriş
+              </Link>
+              <Link
+                href="/register"
+                className="sm:hidden rounded-xl bg-accent px-3 py-2 text-sm font-bold text-black"
+              >
+                Kayıt Ol
+              </Link>
+            </>
           ) : null}
 
           <button
