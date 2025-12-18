@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { ListemProvider } from '@/components/listem/ListemProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={inter.className}>
-      <body className="min-h-screen bg-bg">{children}</body>
+      <body className="min-h-screen bg-bg">
+        <ListemProvider>{children}</ListemProvider>
+      </body>
     </html>
   );
 }

@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import { Badge } from '@/components/ui/Badge';
 import { LinkButton } from '@/components/ui/Button';
 import { IconPlay } from '@/components/Icons';
+import { AddToListButton } from '@/components/listem/AddToListButton';
 import { ANIME, CAST, getAnimeBySlug, pick } from '@/lib/mock';
 import { AnimeDetailClient } from './AnimeDetailClient';
 
@@ -68,9 +69,7 @@ export default async function AnimeDetailPage({ params }: { params: Promise<{ sl
               <LinkButton href="#" size="lg" variant="secondary" className="h-12">
                 Fragman
               </LinkButton>
-              <LinkButton href="#" size="lg" variant="secondary" className="h-12 w-12 justify-center px-0">
-                +
-              </LinkButton>
+              <AddToListButton slug={anime.slug} size="lg" className="bg-white/10" />
             </div>
 
             <div className="mt-10 hidden items-center gap-3 text-xs text-white/55 md:flex">

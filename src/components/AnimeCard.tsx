@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Anime } from '@/lib/mock';
+import { AddToListButton } from '@/components/listem/AddToListButton';
 
 export function AnimeCard({ anime, compact }: { anime: Anime; compact?: boolean }) {
   return (
@@ -31,6 +32,10 @@ export function AnimeCard({ anime, compact }: { anime: Anime; compact?: boolean 
       </div>
       <div className="absolute right-2 top-2 rounded-full bg-black/55 px-2 py-1 text-xs font-bold text-accent ring-1 ring-white/10">
         ★ {anime.rating.toFixed(1)}
+      </div>
+
+      <div className="absolute left-2 top-2">
+        <AddToListButton slug={anime.slug} size="sm" className="bg-black/55 hover:bg-black/65" />
       </div>
     </Link>
   );
