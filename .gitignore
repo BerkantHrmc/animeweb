@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+/.next
+/out
 
 # Node
 /node_modules
@@ -37,6 +39,7 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+.env*
 
 # System files
 .DS_Store
